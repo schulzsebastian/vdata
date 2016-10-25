@@ -8,3 +8,5 @@ from .. import app
 @app.route("/api/status")
 def status():
     return jsonify({"status": "ok"})
+
+from features import *

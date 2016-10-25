@@ -16,4 +16,7 @@ if app.config["DB_FLUSH"]:
     except ProgrammingError:
         pass
 db.create_tables([Features], safe=True)
-Features.create(geometry="SRID=4326;POINT(1 1)", attributes={"key": "value"})
+Features.create(geometry="SRID=4326;POINT(1 1)",
+                attributes={"key1": "value1", "key2": "value2"})
+Features.create(geometry="SRID=4326;POINT(2 2)",
+                attributes={"key1": "value1", "key2": "value2"})
