@@ -1,2 +1,3 @@
 app/config/local_config.py
+static/v.geojson
 *.pyc
