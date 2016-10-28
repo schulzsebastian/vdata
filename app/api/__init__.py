@@ -9,4 +9,4 @@ from .. import app
 def status():
     return jsonify({"status": "ok"})
 
-from features import *
+from .features import *
