@@ -1,4 +1,6 @@
 from app import *
+from peewee import fn
+from shapely.geometry import shape
 import json
 
 def read_geojson(filename):
@@ -7,7 +9,6 @@ def read_geojson(filename):
 
 
 geojson = read_geojson('static/v.geojson')
-i = 0
 for feature in geojson['features']:
-    i += 1
-print i
+    Features.create(geometry=shape(feature['geometry']).wkt,
+                    attributes=feature['properties'])
